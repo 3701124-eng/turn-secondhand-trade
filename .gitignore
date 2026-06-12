@@ -1,0 +1,27 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+
+## Visual Studio
+.vs/
+*.csproj.user
+*.csproj.user.*
+*.resx.user
+Properties/Resources.Designer.cs
+Properties/Resources.resx
+
+## NuGet
+packages/
+*.nupkg
+
+## OS
+Thumbs.db
+.DS_Store
+
+## IDE
+*.swp
+*.swo
+_ReSharper*/

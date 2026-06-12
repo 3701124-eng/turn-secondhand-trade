@@ -1,0 +1,15 @@
+namespace 转一转校园二手物品交易系统
+{
+    internal static class Program
+    {
+        public static int CurrentUserId = 0;
+        public static string CurrentUserName = "";
+
+        [STAThread]
+        static void Main()
+        {
+            ApplicationConfiguration.Initialize();
+            Application.Run(new FrmLogin());
+        }
+    }
+}
