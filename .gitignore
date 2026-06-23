@@ -10,7 +10,6 @@ obj/
 *.csproj.user
 *.csproj.user.*
 *.resx.user
-Properties/Resources.Designer.cs
 
 ## NuGet
 packages/
