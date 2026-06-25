@@ -56,5 +56,10 @@
         {
 
         }
+
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Frmadmin());
+        }
     }
 }

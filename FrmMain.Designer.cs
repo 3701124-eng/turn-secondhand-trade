@@ -25,6 +25,7 @@
             btn_GoodsList = new Button();
             lbl_Welcome = new Label();
             pnl_Content = new Panel();
+            btn_admin = new Button();
             pnl_Menu.SuspendLayout();
             SuspendLayout();
             // 
@@ -32,6 +33,7 @@
             // 
             pnl_Menu.BackgroundImage = (Image)resources.GetObject("pnl_Menu.BackgroundImage");
             pnl_Menu.BackgroundImageLayout = ImageLayout.Stretch;
+            pnl_Menu.Controls.Add(btn_admin);
             pnl_Menu.Controls.Add(btn_Logout);
             pnl_Menu.Controls.Add(btn_MyOrder);
             pnl_Menu.Controls.Add(btn_Publish);
@@ -117,6 +119,18 @@
             pnl_Content.TabIndex = 1;
             pnl_Content.Paint += pnl_Content_Paint;
             // 
+            // btn_admin
+            // 
+            btn_admin.Dock = DockStyle.Top;
+            btn_admin.Location = new Point(0, 182);
+            btn_admin.Margin = new Padding(5, 4, 5, 4);
+            btn_admin.Name = "btn_admin";
+            btn_admin.Size = new Size(335, 42);
+            btn_admin.TabIndex = 5;
+            btn_admin.Text = "管理员面板";
+            btn_admin.UseVisualStyleBackColor = true;
+            btn_admin.Click += btn_admin_Click;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -141,5 +155,6 @@
         private Button btn_MyOrder;
         private Button btn_Logout;
         private Panel pnl_Content;
+        private Button btn_admin;
     }
 }
