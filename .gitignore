@@ -24,3 +24,6 @@ Thumbs.db
 *.swp
 *.swo
 _ReSharper*/
+
+## Secrets
+AppSettings.secret.config
