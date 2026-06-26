@@ -26,6 +26,8 @@
             txt_ConfirmPwd = new TextBox();
             lbl_Phone = new Label();
             txt_Phone = new TextBox();
+            lbl_Email = new Label();
+            txt_Email = new TextBox();
             btn_Submit = new Button();
             btn_Cancel = new Button();
             lbl_Tip = new Label();
@@ -112,6 +114,25 @@
             lbl_Phone.Text = "手机号：";
             lbl_Phone.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // lbl_Email
+            // 
+            lbl_Email.AutoSize = true;
+            lbl_Email.Location = new Point(399, 352);
+            lbl_Email.Margin = new Padding(5, 0, 5, 0);
+            lbl_Email.Name = "lbl_Email";
+            lbl_Email.Size = new Size(64, 24);
+            lbl_Email.TabIndex = 9;
+            lbl_Email.Text = "邮箱：";
+            lbl_Email.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // txt_Email
+            // 
+            txt_Email.Location = new Point(534, 348);
+            txt_Email.Margin = new Padding(5, 4, 5, 4);
+            txt_Email.Name = "txt_Email";
+            txt_Email.Size = new Size(312, 30);
+            txt_Email.TabIndex = 10;
+            // 
             // txt_Phone
             // 
             txt_Phone.Location = new Point(534, 292);
@@ -123,22 +144,22 @@
             // 
             // btn_Submit
             // 
-            btn_Submit.Location = new Point(471, 367);
+            btn_Submit.Location = new Point(471, 423);
             btn_Submit.Margin = new Padding(5, 4, 5, 4);
             btn_Submit.Name = "btn_Submit";
             btn_Submit.Size = new Size(126, 42);
-            btn_Submit.TabIndex = 9;
+            btn_Submit.TabIndex = 11;
             btn_Submit.Text = "注册";
             btn_Submit.UseVisualStyleBackColor = true;
             btn_Submit.Click += BtnSubmitClick;
             // 
             // btn_Cancel
             // 
-            btn_Cancel.Location = new Point(647, 367);
+            btn_Cancel.Location = new Point(647, 423);
             btn_Cancel.Margin = new Padding(5, 4, 5, 4);
             btn_Cancel.Name = "btn_Cancel";
             btn_Cancel.Size = new Size(126, 42);
-            btn_Cancel.TabIndex = 10;
+            btn_Cancel.TabIndex = 12;
             btn_Cancel.Text = "取消";
             btn_Cancel.UseVisualStyleBackColor = true;
             btn_Cancel.Click += BtnCancelClick;
@@ -147,11 +168,11 @@
             // 
             lbl_Tip.AutoSize = true;
             lbl_Tip.ForeColor = Color.Red;
-            lbl_Tip.Location = new Point(534, 438);
+            lbl_Tip.Location = new Point(534, 494);
             lbl_Tip.Margin = new Padding(5, 0, 5, 0);
             lbl_Tip.Name = "lbl_Tip";
             lbl_Tip.Size = new Size(0, 24);
-            lbl_Tip.TabIndex = 11;
+            lbl_Tip.TabIndex = 13;
             // 
             // FrmRegister
             // 
@@ -163,6 +184,8 @@
             Controls.Add(lbl_Tip);
             Controls.Add(btn_Cancel);
             Controls.Add(btn_Submit);
+            Controls.Add(txt_Email);
+            Controls.Add(lbl_Email);
             Controls.Add(txt_Phone);
             Controls.Add(lbl_Phone);
             Controls.Add(txt_ConfirmPwd);
@@ -190,6 +213,8 @@
         private TextBox txt_ConfirmPwd;
         private Label lbl_Phone;
         private TextBox txt_Phone;
+        private Label lbl_Email;
+        private TextBox txt_Email;
         private Button btn_Submit;
         private Button btn_Cancel;
         private Label lbl_Tip;

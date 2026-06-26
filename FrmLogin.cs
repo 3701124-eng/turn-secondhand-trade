@@ -58,5 +58,11 @@ namespace 转一转校园二手物品交易系统
             FrmRegister reg = new FrmRegister();
             reg.ShowDialog();
         }
+
+        private void link_ForgotPwd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmForgotPassword frm = new FrmForgotPassword();
+            frm.ShowDialog();
+        }
     }
 }

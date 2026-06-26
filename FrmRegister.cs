@@ -36,11 +36,19 @@ namespace 转一转校园二手物品交易系统
                 return;
             }
 
-            string sql = "INSERT INTO users (username, password, phone) VALUES (@u, @p, @ph)";
+            string email = txt_Email.Text.Trim();
+            if (!string.IsNullOrEmpty(email) && !System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                lbl_Tip.Text = "邮箱格式不正确";
+                return;
+            }
+
+            string sql = "INSERT INTO users (username, password, phone, email) VALUES (@u, @p, @ph, @em)";
             SqlParameter[] ps = {
                 new SqlParameter("@u", txt_UserName.Text.Trim()),
                 new SqlParameter("@p", BCrypt.Net.BCrypt.HashPassword(txt_Pwd.Text)),
-                new SqlParameter("@ph", string.IsNullOrEmpty(txt_Phone.Text) ? (object)DBNull.Value : txt_Phone.Text)
+                new SqlParameter("@ph", string.IsNullOrEmpty(txt_Phone.Text) ? (object)DBNull.Value : txt_Phone.Text),
+                new SqlParameter("@em", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email)
             };
             SQLHelper.Exec(sql, ps);
 

@@ -24,6 +24,7 @@
             txt_Pwd = new TextBox();
             btn_Login = new Button();
             btn_Register = new Button();
+            link_ForgotPwd = new LinkLabel();
             SuspendLayout();
             // 
             // lbl_Title
@@ -88,7 +89,7 @@
             btn_Login.Anchor = AnchorStyles.None;
             btn_Login.BackColor = SystemColors.Highlight;
             btn_Login.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            btn_Login.Location = new Point(465, 483);
+            btn_Login.Location = new Point(474, 483);
             btn_Login.Margin = new Padding(5, 4, 5, 4);
             btn_Login.Name = "btn_Login";
             btn_Login.Size = new Size(126, 42);
@@ -102,7 +103,7 @@
             btn_Register.Anchor = AnchorStyles.None;
             btn_Register.BackColor = SystemColors.Highlight;
             btn_Register.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            btn_Register.Location = new Point(647, 483);
+            btn_Register.Location = new Point(656, 483);
             btn_Register.Margin = new Padding(5, 4, 5, 4);
             btn_Register.Name = "btn_Register";
             btn_Register.Size = new Size(126, 42);
@@ -111,6 +112,22 @@
             btn_Register.UseVisualStyleBackColor = false;
             btn_Register.Click += BtnRegisterClick;
             // 
+            // link_ForgotPwd
+            // 
+            link_ForgotPwd.ActiveLinkColor = Color.Red;
+            link_ForgotPwd.AutoSize = true;
+            link_ForgotPwd.BackColor = SystemColors.AppWorkspace;
+            link_ForgotPwd.DisabledLinkColor = Color.Gray;
+            link_ForgotPwd.LinkColor = Color.IndianRed;
+            link_ForgotPwd.Location = new Point(582, 529);
+            link_ForgotPwd.Name = "link_ForgotPwd";
+            link_ForgotPwd.Size = new Size(100, 24);
+            link_ForgotPwd.TabIndex = 7;
+            link_ForgotPwd.TabStop = true;
+            link_ForgotPwd.Text = "忘记密码？";
+            link_ForgotPwd.VisitedLinkColor = Color.Gray;
+            link_ForgotPwd.LinkClicked += link_ForgotPwd_LinkClicked;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -118,6 +135,7 @@
             BackgroundImage = Properties.Resources.ChatGPT_Image_2026年6月12日_11_13_52;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1257, 635);
+            Controls.Add(link_ForgotPwd);
             Controls.Add(btn_Register);
             Controls.Add(btn_Login);
             Controls.Add(txt_Pwd);
@@ -142,5 +160,6 @@
         private TextBox txt_Pwd;
         private Button btn_Login;
         private Button btn_Register;
+        private LinkLabel link_ForgotPwd;
     }
 }
