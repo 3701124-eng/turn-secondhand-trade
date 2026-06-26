@@ -116,12 +116,13 @@
             // 
             link_ForgotPwd.ActiveLinkColor = Color.Red;
             link_ForgotPwd.AutoSize = true;
-            link_ForgotPwd.BackColor = SystemColors.AppWorkspace;
+            link_ForgotPwd.BackColor = SystemColors.ButtonHighlight;
             link_ForgotPwd.DisabledLinkColor = Color.Gray;
+            link_ForgotPwd.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             link_ForgotPwd.LinkColor = Color.IndianRed;
             link_ForgotPwd.Location = new Point(582, 529);
             link_ForgotPwd.Name = "link_ForgotPwd";
-            link_ForgotPwd.Size = new Size(100, 24);
+            link_ForgotPwd.Size = new Size(102, 25);
             link_ForgotPwd.TabIndex = 7;
             link_ForgotPwd.TabStop = true;
             link_ForgotPwd.Text = "忘记密码？";
