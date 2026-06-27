@@ -54,8 +54,8 @@ namespace 转一转校园二手物品交易系统
             }
 
             string sql = @"INSERT INTO goods 
-    (title, price, category_id, seller_id, description, status)
-    VALUES (@t, @p, @c, @s, @d, '在售');
+    (title, price, category_id, seller_id, description, status, created_time)
+    VALUES (@t, @p, @c, @s, @d, '在售', @ct);
     SELECT SCOPE_IDENTITY();";
 
             SqlParameter[] ps = {
@@ -64,6 +64,7 @@ namespace 转一转校园二手物品交易系统
                 new SqlParameter("@c", cbo_Category.SelectedValue),
                 new SqlParameter("@s", Program.CurrentUserId),
                 new SqlParameter("@d", rtb_Desc.Text),
+                new SqlParameter("@ct", DateTime.Now),
             };
 
             int newId = Convert.ToInt32(SQLHelper.Scalar(sql, ps));

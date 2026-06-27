@@ -89,5 +89,25 @@ namespace 转一转校园二手物品交易系统.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 转一转壁纸 {
+            get {
+                object obj = ResourceManager.GetObject("转一转壁纸", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 转一转壁纸2 {
+            get {
+                object obj = ResourceManager.GetObject("转一转壁纸2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

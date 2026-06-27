@@ -33,7 +33,12 @@
             tpGoodsAudit = new TabPage();
             tpOrderDispute = new TabPage();
             tpAnnounceStat = new TabPage();
+            tabControl2 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             tabControl1.SuspendLayout();
+            tpUserManage.SuspendLayout();
+            tabControl2.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -51,6 +56,7 @@
             // 
             // tpUserManage
             // 
+            tpUserManage.Controls.Add(tabControl2);
             tpUserManage.Location = new Point(4, 54);
             tpUserManage.Name = "tpUserManage";
             tpUserManage.Padding = new Padding(3);
@@ -90,6 +96,36 @@
             tpAnnounceStat.Text = "公告与数据统计";
             tpAnnounceStat.UseVisualStyleBackColor = true;
             // 
+            // tabControl2
+            // 
+            tabControl2.Controls.Add(tabPage1);
+            tabControl2.Controls.Add(tabPage2);
+            tabControl2.Location = new Point(417, 167);
+            tabControl2.Name = "tabControl2";
+            tabControl2.SelectedIndex = 0;
+            tabControl2.Size = new Size(8, 8);
+            tabControl2.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 33);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(0, 0);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 33);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(0, 0);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Frmadmin
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -100,6 +136,8 @@
             Text = "管理员面板";
             Load += Frmadmin_Load;
             tabControl1.ResumeLayout(false);
+            tpUserManage.ResumeLayout(false);
+            tabControl2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -110,5 +148,8 @@
         private TabPage tpGoodsAudit;
         private TabPage tpOrderDispute;
         private TabPage tpAnnounceStat;
+        private TabControl tabControl2;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }

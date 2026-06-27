@@ -34,7 +34,7 @@ namespace 转一转校园二手物品交易系统
             // 
             // FrmBase
             // 
-            ClientSize = new Size(591, 481);
+            ClientSize = new Size(929, 679);
             Name = "FrmBase";
             Load += FrmBase_Load;
             ResumeLayout(false);
