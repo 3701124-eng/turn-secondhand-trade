@@ -55,7 +55,7 @@ namespace 转一转校园二手物品交易系统
 
             string sql = @"INSERT INTO goods 
     (title, price, category_id, seller_id, description, status, created_time)
-    VALUES (@t, @p, @c, @s, @d, '在售', @ct);
+    VALUES (@t, @p, @c, @s, @d, N'待审核', @ct);
     SELECT SCOPE_IDENTITY();";
 
             SqlParameter[] ps = {
@@ -71,17 +71,23 @@ namespace 转一转校园二手物品交易系统
 
             if (_selectedImagePath != null)
             {
-                string dir = "UploadImages";
-                Directory.CreateDirectory(dir);
+                string outDir = Path.Combine(Application.StartupPath, "Upload_image");
+                Directory.CreateDirectory(outDir);
                 string fileName = $"goods_{newId}_{Guid.NewGuid():N}{Path.GetExtension(_selectedImagePath)}";
-                File.Copy(_selectedImagePath, Path.Combine(dir, fileName));
+
+                string outPath = Path.Combine(outDir, fileName);
+                File.Copy(_selectedImagePath, outPath, overwrite: true);
+
+                string srcDir = Path.GetFullPath(Path.Combine(Application.StartupPath, "..", "..", "..", "Upload_image"));
+                if (Directory.Exists(srcDir))
+                    File.Copy(_selectedImagePath, Path.Combine(srcDir, fileName), overwrite: true);
 
                 SQLHelper.Exec(
                     "INSERT INTO goods_images (goods_id, image_url) VALUES (@g, @u)",
-                    new[] { new SqlParameter("@g", newId), new SqlParameter("@u", Path.Combine(dir, fileName)) });
+                    new[] { new SqlParameter("@g", newId), new SqlParameter("@u", Path.Combine("Upload_image", fileName)) });
             }
 
-            ShowTip("发布成功");
+            ShowTip("商品已提交审核，请等待管理员审核通过");
             this.Close();
         }
     }

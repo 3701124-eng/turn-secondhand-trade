@@ -81,6 +81,8 @@
             // 
             // dgv_Goods
             // 
+            dgv_Goods.AllowUserToAddRows = false;
+            dgv_Goods.AutoGenerateColumns = false;
             dgv_Goods.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv_Goods.BackgroundColor = SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;

@@ -14,6 +14,8 @@ namespace 转一转校园二手物品交易系统
         private void FrmMainLoad(object sender, EventArgs e)
         {
             Text = "二手交易系统 - " + Program.CurrentUserName;
+            btn_admin.Visible = Program.CurrentUserRole == "超级管理员"
+                || Program.CurrentUserRole == "商品管理员";
         }
 
         private void OpenChildForm(Form childForm)
@@ -52,6 +54,7 @@ namespace 转一转校园二手物品交易系统
         {
             Program.CurrentUserId = 0;
             Program.CurrentUserName = "";
+            Program.CurrentUserRole = "";
             this.Close();
         }
 
@@ -62,6 +65,12 @@ namespace 转一转校园二手物品交易系统
 
         private void btn_admin_Click(object sender, EventArgs e)
         {
+            if (Program.CurrentUserRole != "超级管理员" &&
+                Program.CurrentUserRole != "商品管理员")
+            {
+                ShowError("无权限访问");
+                return;
+            }
             OpenChildForm(new Frmadmin());
         }
 

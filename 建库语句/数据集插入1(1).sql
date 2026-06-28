@@ -29,16 +29,16 @@ GO
 
 SET IDENTITY_INSERT [dbo].[goods_images] ON 
 
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (1, 1, N'UploadImages\goods_1.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (2, 3, N'UploadImages\goods_3.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (3, 4, N'UploadImages\goods_4.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (4, 5, N'UploadImages\goods_5.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (5, 6, N'UploadImages\goods_6.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (6, 7, N'UploadImages\goods_7.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (7, 8, N'UploadImages\goods_8.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (8, 9, N'UploadImages\goods_9.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (9, 10, N'UploadImages\goods_10.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
-INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (10, 11, N'UploadImages\goods_11.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (1, 1, N'Upload_image\goods_1.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (2, 3, N'Upload_image\goods_3.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (3, 4, N'Upload_image\goods_4.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (4, 5, N'Upload_image\goods_5.png', 1, CAST(N'2026-06-26T10:01:53.210' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (5, 6, N'Upload_image\goods_6.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (6, 7, N'Upload_image\goods_7.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (7, 8, N'Upload_image\goods_8.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (8, 9, N'Upload_image\goods_9.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (9, 10, N'Upload_image\goods_10.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
+INSERT [dbo].[goods_images] ([image_id], [goods_id], [image_url], [sort_order], [upload_time]) VALUES (10, 11, N'Upload_image\goods_11.png', 1, CAST(N'2026-06-27T16:39:25.493' AS DateTime))
 SET IDENTITY_INSERT [dbo].[goods_images] OFF
 GO
 

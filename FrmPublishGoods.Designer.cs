@@ -139,7 +139,7 @@ namespace 转一转校园二手物品交易系统
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.ChatGPT_Image_2026年6月12日_12_24_25;
+            BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_form.png"));
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(591, 481);
             Controls.Add(lbl_Title);

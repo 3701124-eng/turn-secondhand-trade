@@ -34,8 +34,8 @@
     <None Update="AppSettings.secret.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UploadImages\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="Upload_image\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Sys_images\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

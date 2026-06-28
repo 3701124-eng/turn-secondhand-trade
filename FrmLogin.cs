@@ -18,7 +18,10 @@ namespace 转一转校园二手物品交易系统
                 return;
             }
 
-            string sql = "SELECT user_id, username, password FROM users WHERE username=@u";
+            string sql = @"SELECT u.user_id, u.username, u.password, r.role_name
+FROM users u
+JOIN roles r ON u.role_id = r.role_id
+WHERE u.username=@u AND u.status='active'";
             SqlParameter[] ps = {
                 new SqlParameter("@u", txt_UserName.Text.Trim())
             };
@@ -40,6 +43,7 @@ namespace 转一转校园二手物品交易系统
 
             Program.CurrentUserId = Convert.ToInt32(dt.Rows[0]["user_id"]);
             Program.CurrentUserName = dt.Rows[0]["username"]?.ToString() ?? "";
+            Program.CurrentUserRole = dt.Rows[0]["role_name"]?.ToString() ?? "消费用户";
 
             FrmMain main = new FrmMain();
             main.FormClosed += (s, args) =>
@@ -63,6 +67,12 @@ namespace 转一转校园二手物品交易系统
         {
             FrmForgotPassword frm = new FrmForgotPassword();
             frm.ShowDialog();
+        }
+
+        private void txt_Pwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                BtnLoginClick(sender, e);
         }
     }
 }
