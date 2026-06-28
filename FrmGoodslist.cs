@@ -16,16 +16,18 @@ namespace 转一转校园二手物品交易系统
         private int _totalCount = 0;
         private int _totalPages = 1;
         private string _keyword = "";
+        private Dictionary<int, Image> _imageCache = new();
 
         public FrmGoodslist()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            dgv_Goods.CellFormatting += dgv_Goods_CellFormatting;
         }
 
         private void FrmGoodslist_Load(object sender, EventArgs e)
         {
-            dgv_Goods.Columns["image_url"].DataPropertyName = "img";
+            dgv_Goods.Columns["image_url"].DataPropertyName = null;
             BeginInvoke(() => LoadData());
         }
 
@@ -72,23 +74,41 @@ namespace 转一转校园二手物品交易系统
                 return;
             }
 
-            dt.Columns.Add("img", typeof(Image));
-            string defaultImg = Path.Combine(Application.StartupPath, "Sys_images", "Goods_img_default.png");
+            _imageCache.Clear();
+            string defaultImg = Path.Combine(Application.StartupPath, "Sys_images", "Placeholders", "Goods_img_default.png");
+            Image? defaultImage = File.Exists(defaultImg) ? Image.FromFile(defaultImg) : null;
             foreach (DataRow row in dt.Rows)
             {
+                int goodsId = Convert.ToInt32(row["goods_id"]);
+                Image? img = null;
                 string? path = row["image_url"]?.ToString();
                 if (!string.IsNullOrEmpty(path))
                 {
                     string fullPath = Path.Combine(Application.StartupPath, path);
                     if (File.Exists(fullPath))
-                        row["img"] = Image.FromFile(fullPath);
+                        img = Image.FromFile(fullPath);
                 }
-                if (row["img"] == DBNull.Value && File.Exists(defaultImg))
-                    row["img"] = Image.FromFile(defaultImg);
+                _imageCache[goodsId] = img ?? defaultImage!;
             }
 
             dgv_Goods.DataSource = dt;
             UpdatePageInfo();
+        }
+
+        private void dgv_Goods_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgv_Goods.Columns[e.ColumnIndex].Name == "image_url" && e.RowIndex >= 0)
+            {
+                if (dgv_Goods.Rows[e.RowIndex].DataBoundItem is DataRowView drv)
+                {
+                    int goodsId = Convert.ToInt32(drv["goods_id"]);
+                    if (_imageCache.TryGetValue(goodsId, out var img))
+                    {
+                        e.Value = img;
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
         }
 
         private void UpdatePageInfo()

@@ -17,7 +17,6 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             pnl_Menu = new Panel();
             btn_admin = new Button();
             btn_Logout = new Button();
@@ -34,7 +33,7 @@
             // pnl_Menu
             // 
             pnl_Menu.AutoScroll = true;
-            pnl_Menu.BackgroundImage = (Image)resources.GetObject("pnl_Menu.BackgroundImage");
+            pnl_Menu.BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_menu.png"));
             pnl_Menu.BackgroundImageLayout = ImageLayout.Stretch;
             pnl_Menu.Controls.Add(btn_admin);
             pnl_Menu.Controls.Add(btn_Logout);
@@ -119,7 +118,7 @@
             // 
             pnl_Content.AutoScroll = true;
             pnl_Content.BackColor = Color.OldLace;
-            pnl_Content.BackgroundImage = Properties.Resources.转一转壁纸2;
+            pnl_Content.BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_main.jpg"));
             pnl_Content.BackgroundImageLayout = ImageLayout.Stretch;
             pnl_Content.Controls.Add(panel1);
             pnl_Content.Dock = DockStyle.Fill;

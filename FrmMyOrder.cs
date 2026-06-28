@@ -26,32 +26,48 @@ namespace 转一转校园二手物品交易系统
             }
 
             string status = dgv_Order.CurrentRow.Cells["ColStatus"].Value.ToString();
-            if (status != "待收货")
-            {
-                MessageBox.Show("只有「待收货」状态的订单才能确认收货");
-                return;
-            }
-
             int orderId = Convert.ToInt32(dgv_Order.CurrentRow.Cells["ColId"].Value);
-            string sql = "UPDATE orders SET order_status='已完成', complete_time=GETDATE() WHERE order_id=@id";
-            SQLHelper.Exec(sql, new[] { new SqlParameter("@id", orderId) });
 
-            MessageBox.Show("确认收货成功！");
-            LoadOrders();  // 刷新列表
+            if (rdo_Seller.Checked)
+            {
+                if (status != "待付款")
+                {
+                    MessageBox.Show("只有「待付款」状态的订单才能确认收款");
+                    return;
+                }
+                SQLHelper.Exec("UPDATE orders SET order_status='待收货' WHERE order_id=@id",
+                    new[] { new SqlParameter("@id", orderId) });
+                MessageBox.Show("已确认收款");
+            }
+            else
+            {
+                if (status != "待收货")
+                {
+                    MessageBox.Show("只有「待收货」状态的订单才能确认收货");
+                    return;
+                }
+                SQLHelper.Exec("UPDATE orders SET order_status='已完成', complete_time=GETDATE() WHERE order_id=@id",
+                    new[] { new SqlParameter("@id", orderId) });
+                MessageBox.Show("确认收货成功！");
+            }
+            LoadOrders();
         }
 
         private void rdo_Buyer_CheckedChanged(object sender, EventArgs e)
         {
+            btn_Confirm.Text = "确认收货";
             LoadOrders();
         }
 
         private void rdo_Seller_CheckedChanged(object sender, EventArgs e)
         {
+            btn_Confirm.Text = "确认付款";
             LoadOrders();
         }
 
         private void FrmMyOrder_Load(object sender, EventArgs e)
         {
+            btn_Confirm.Text = "确认收货";
             BeginInvoke(() => LoadOrders());
         }
 

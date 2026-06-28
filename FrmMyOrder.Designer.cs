@@ -49,13 +49,13 @@
             dgv_Order.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_Order.Columns.AddRange(new DataGridViewColumn[] { ColId, ColGoods, ColPrice, ColTime, ColStatus, ColBuyer });
             dgv_Order.GridColor = SystemColors.Highlight;
-            dgv_Order.Location = new Point(-2, 121);
+            dgv_Order.Location = new Point(29, 121);
             dgv_Order.Margin = new Padding(5, 4, 5, 4);
             dgv_Order.Name = "dgv_Order";
             dgv_Order.ReadOnly = true;
             dgv_Order.RowHeadersWidth = 62;
             dgv_Order.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Order.Size = new Size(924, 432);
+            dgv_Order.Size = new Size(893, 432);
             dgv_Order.TabIndex = 7;
             // 
             // ColId
@@ -160,7 +160,6 @@
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            BackgroundImage = Properties.Resources.ChatGPT_Image_2026年6月12日_12_24_25;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(929, 679);
             Controls.Add(lbl_Tip);

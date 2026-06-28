@@ -52,7 +52,7 @@ namespace 转一转校园二手物品交易系统
             }
             if (pic_Goods.Image == null)
             {
-                string defaultPath = Path.Combine(Application.StartupPath, "Sys_images", "Goods_img_default.png");
+                string defaultPath = Path.Combine(Application.StartupPath, "Sys_images", "Placeholders", "Goods_img_default.png");
                 if (File.Exists(defaultPath))
                     pic_Goods.Image = Image.FromFile(defaultPath);
             }
@@ -61,6 +61,21 @@ namespace 转一转校园二手物品交易系统
             {
                 btn_Order.Enabled = false;
                 btn_Order.Text = "不能购买自己的商品";
+            }
+            else if (row["status"].ToString() == "待审核")
+            {
+                btn_Order.Enabled = false;
+                btn_Order.Text = "该商品正在审核中";
+            }
+            else if (row["status"].ToString() == "已拒绝")
+            {
+                btn_Order.Enabled = false;
+                btn_Order.Text = "该商品审核未通过";
+            }
+            else if (row["status"].ToString() == "已下架")
+            {
+                btn_Order.Enabled = false;
+                btn_Order.Text = "该商品已下架";
             }
             else if (row["status"].ToString() != "在售")
             {
