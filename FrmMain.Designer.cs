@@ -133,9 +133,9 @@
             // 
             panel1.AutoScroll = true;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Location = new Point(133, 120);
+            panel1.Location = new Point(62, 116);
             panel1.Name = "panel1";
-            panel1.Size = new Size(375, 229);
+            panel1.Size = new Size(480, 250);
             panel1.TabIndex = 0;
             // 
             // FrmMain
