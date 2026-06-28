@@ -7,7 +7,21 @@ namespace 转一转校园二手物品交易系统
     {
         public Frmadmin()
         {
+            SetStyle(ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.UserPaint |
+                     ControlStyles.DoubleBuffer |
+                     ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
 
         private void Frmadmin_Load(object sender, EventArgs e)
@@ -339,6 +353,16 @@ VALUES(@content, @uid, GETDATE())";
         private void cbo_FilterOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadOrders();
+        }
+
+        private void tpGoodsAudit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Users_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

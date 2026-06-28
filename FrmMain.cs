@@ -1,4 +1,6 @@
-﻿using System.Drawing.Drawing2D;
+﻿using System.Data;
+using System.Drawing.Drawing2D;
+using Microsoft.Data.SqlClient;
 
 namespace 转一转校园二手物品交易系统
 {
@@ -16,6 +18,33 @@ namespace 转一转校园二手物品交易系统
             Text = "二手交易系统 - " + Program.CurrentUserName;
             btn_admin.Visible = Program.CurrentUserRole == "超级管理员"
                 || Program.CurrentUserRole == "商品管理员";
+
+            LoadAnnouncement();
+        }
+
+        private void LoadAnnouncement()
+        {
+            panel1.Controls.Clear();
+
+            string sql = @"SELECT TOP 1 content FROM announcements ORDER BY created_time DESC";
+            DataTable dt = SQLHelper.Query(sql);
+
+            string text = dt.Rows.Count > 0 && dt.Rows[0]["content"] != DBNull.Value
+                ? "📢 " + dt.Rows[0]["content"].ToString()
+                : "暂无公告";
+
+            Label lbl = new Label
+            {
+                Text = text,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("微软雅黑", 12, FontStyle.Bold),
+                ForeColor = Color.FromArgb(70, 130, 180),
+                BackColor = Color.Transparent,
+                AutoSize = false,
+            };
+
+            panel1.Controls.Add(lbl);
         }
 
         private void OpenChildForm(Form childForm)
