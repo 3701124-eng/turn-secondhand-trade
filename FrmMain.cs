@@ -11,6 +11,9 @@ namespace 转一转校园二手物品交易系统
         public FrmMain()
         {
             InitializeComponent();
+            string bgDir = Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds");
+            pnl_Menu.BackgroundImage = Image.FromFile(Path.Combine(bgDir, "background_menu.png"));
+            pnl_Content.BackgroundImage = Image.FromFile(Path.Combine(bgDir, "background_main.jpg"));
         }
 
         private void FrmMainLoad(object sender, EventArgs e)

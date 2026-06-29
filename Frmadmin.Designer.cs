@@ -93,7 +93,7 @@
             tabAdmin.Margin = new Padding(2);
             tabAdmin.Name = "tabAdmin";
             tabAdmin.SelectedIndex = 0;
-            tabAdmin.Size = new Size(591, 481);
+            tabAdmin.Size = new Size(929, 679);
             tabAdmin.TabIndex = 6;
             // 
             // tpGoodsAudit
@@ -106,11 +106,11 @@
             tpGoodsAudit.Controls.Add(cbo_FilterStatus);
             tpGoodsAudit.Controls.Add(lbl_Filter);
             tpGoodsAudit.Controls.Add(dgv_GoodsAudit);
-            tpGoodsAudit.Location = new Point(4, 26);
+            tpGoodsAudit.Location = new Point(6, 37);
             tpGoodsAudit.Margin = new Padding(2);
             tpGoodsAudit.Name = "tpGoodsAudit";
             tpGoodsAudit.Padding = new Padding(2);
-            tpGoodsAudit.Size = new Size(583, 451);
+            tpGoodsAudit.Size = new Size(916, 637);
             tpGoodsAudit.TabIndex = 0;
             tpGoodsAudit.Text = "商品审核";
             tpGoodsAudit.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             // btn_Reject
             // 
             btn_Reject.ForeColor = Color.Red;
-            btn_Reject.Location = new Point(353, 263);
+            btn_Reject.Location = new Point(555, 371);
             btn_Reject.Margin = new Padding(2);
             btn_Reject.Name = "btn_Reject";
-            btn_Reject.Size = new Size(65, 24);
+            btn_Reject.Size = new Size(102, 34);
             btn_Reject.TabIndex = 8;
             btn_Reject.Text = "拒绝";
             btn_Reject.UseVisualStyleBackColor = true;
@@ -130,10 +130,10 @@
             // btn_Approve
             // 
             btn_Approve.BackColor = Color.LightGreen;
-            btn_Approve.Location = new Point(152, 263);
+            btn_Approve.Location = new Point(239, 371);
             btn_Approve.Margin = new Padding(2);
             btn_Approve.Name = "btn_Approve";
-            btn_Approve.Size = new Size(65, 24);
+            btn_Approve.Size = new Size(102, 34);
             btn_Approve.TabIndex = 7;
             btn_Approve.Text = "审核通过";
             btn_Approve.UseVisualStyleBackColor = false;
@@ -141,10 +141,10 @@
             // 
             // btn_Refresh
             // 
-            btn_Refresh.Location = new Point(345, 43);
+            btn_Refresh.Location = new Point(542, 61);
             btn_Refresh.Margin = new Padding(2);
             btn_Refresh.Name = "btn_Refresh";
-            btn_Refresh.Size = new Size(40, 23);
+            btn_Refresh.Size = new Size(63, 32);
             btn_Refresh.TabIndex = 6;
             btn_Refresh.Text = "刷新";
             btn_Refresh.UseVisualStyleBackColor = true;
@@ -154,10 +154,10 @@
             // 
             cbo_FilterStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo_FilterStatus.FormattingEnabled = true;
-            cbo_FilterStatus.Location = new Point(236, 41);
+            cbo_FilterStatus.Location = new Point(371, 58);
             cbo_FilterStatus.Margin = new Padding(2);
             cbo_FilterStatus.Name = "cbo_FilterStatus";
-            cbo_FilterStatus.Size = new Size(105, 25);
+            cbo_FilterStatus.Size = new Size(165, 35);
             cbo_FilterStatus.TabIndex = 5;
             cbo_FilterStatus.SelectedIndexChanged += cbo_FilterStatus_SelectedIndexChanged;
             // 
@@ -165,10 +165,10 @@
             // 
             lbl_Filter.AutoSize = true;
             lbl_Filter.BackColor = Color.Transparent;
-            lbl_Filter.Location = new Point(198, 46);
-            lbl_Filter.Margin = new Padding(2, 0, 2, 0);
+            lbl_Filter.Location = new Point(311, 65);
+            lbl_Filter.Margin = new Padding(3, 0, 3, 0);
             lbl_Filter.Name = "lbl_Filter";
-            lbl_Filter.Size = new Size(44, 17);
+            lbl_Filter.Size = new Size(69, 24);
             lbl_Filter.TabIndex = 4;
             lbl_Filter.Text = "状态：";
             // 
@@ -194,14 +194,14 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgv_GoodsAudit.DefaultCellStyle = dataGridViewCellStyle2;
-            dgv_GoodsAudit.Location = new Point(0, 70);
+            dgv_GoodsAudit.Location = new Point(0, 99);
             dgv_GoodsAudit.Margin = new Padding(2);
             dgv_GoodsAudit.MultiSelect = false;
             dgv_GoodsAudit.Name = "dgv_GoodsAudit";
             dgv_GoodsAudit.ReadOnly = true;
             dgv_GoodsAudit.RowHeadersWidth = 72;
             dgv_GoodsAudit.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_GoodsAudit.Size = new Size(587, 189);
+            dgv_GoodsAudit.Size = new Size(922, 267);
             dgv_GoodsAudit.TabIndex = 1;
             // 
             // tpUserManage
@@ -213,21 +213,21 @@
             tpUserManage.Controls.Add(label1);
             tpUserManage.Controls.Add(btn_DisableUser);
             tpUserManage.Controls.Add(btn_SearchUser);
-            tpUserManage.Location = new Point(4, 26);
+            tpUserManage.Location = new Point(6, 37);
             tpUserManage.Margin = new Padding(2);
             tpUserManage.Name = "tpUserManage";
             tpUserManage.Padding = new Padding(2);
-            tpUserManage.Size = new Size(583, 451);
+            tpUserManage.Size = new Size(916, 637);
             tpUserManage.TabIndex = 1;
             tpUserManage.Text = "用户管理";
             tpUserManage.UseVisualStyleBackColor = true;
             // 
             // txt_SearchUser
             // 
-            txt_SearchUser.Location = new Point(230, 52);
+            txt_SearchUser.Location = new Point(361, 73);
             txt_SearchUser.Margin = new Padding(2);
             txt_SearchUser.Name = "txt_SearchUser";
-            txt_SearchUser.Size = new Size(125, 23);
+            txt_SearchUser.Size = new Size(196, 32);
             txt_SearchUser.TabIndex = 4;
             // 
             // dgv_Users
@@ -253,13 +253,13 @@
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgv_Users.DefaultCellStyle = dataGridViewCellStyle4;
-            dgv_Users.Location = new Point(0, 79);
+            dgv_Users.Location = new Point(0, 112);
             dgv_Users.Margin = new Padding(2);
             dgv_Users.Name = "dgv_Users";
             dgv_Users.ReadOnly = true;
             dgv_Users.RowHeadersWidth = 72;
             dgv_Users.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Users.Size = new Size(583, 189);
+            dgv_Users.Size = new Size(916, 267);
             dgv_Users.TabIndex = 3;
             dgv_Users.CellContentClick += dgv_Users_CellContentClick;
             // 
@@ -314,19 +314,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(194, 55);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(305, 78);
+            label1.Margin = new Padding(3, 0, 3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(44, 17);
+            label1.Size = new Size(69, 24);
             label1.TabIndex = 2;
             label1.Text = "搜索：";
             // 
             // btn_DisableUser
             // 
-            btn_DisableUser.Location = new Point(243, 272);
+            btn_DisableUser.Location = new Point(382, 384);
             btn_DisableUser.Margin = new Padding(2);
             btn_DisableUser.Name = "btn_DisableUser";
-            btn_DisableUser.Size = new Size(96, 34);
+            btn_DisableUser.Size = new Size(151, 48);
             btn_DisableUser.TabIndex = 1;
             btn_DisableUser.Text = "禁用/解禁";
             btn_DisableUser.UseVisualStyleBackColor = true;
@@ -334,10 +334,10 @@
             // 
             // btn_SearchUser
             // 
-            btn_SearchUser.Location = new Point(370, 51);
+            btn_SearchUser.Location = new Point(581, 72);
             btn_SearchUser.Margin = new Padding(2);
             btn_SearchUser.Name = "btn_SearchUser";
-            btn_SearchUser.Size = new Size(43, 24);
+            btn_SearchUser.Size = new Size(68, 34);
             btn_SearchUser.TabIndex = 0;
             btn_SearchUser.Text = "搜索";
             btn_SearchUser.UseVisualStyleBackColor = true;
@@ -352,11 +352,11 @@
             tpOrderManage.Controls.Add(cbo_FilterOrder);
             tpOrderManage.Controls.Add(btn_MarkComplete);
             tpOrderManage.Controls.Add(btn_RefreshOrder);
-            tpOrderManage.Location = new Point(4, 26);
+            tpOrderManage.Location = new Point(6, 37);
             tpOrderManage.Margin = new Padding(2);
             tpOrderManage.Name = "tpOrderManage";
             tpOrderManage.Padding = new Padding(2);
-            tpOrderManage.Size = new Size(583, 451);
+            tpOrderManage.Size = new Size(916, 637);
             tpOrderManage.TabIndex = 2;
             tpOrderManage.Text = "订单纠纷处理";
             tpOrderManage.UseVisualStyleBackColor = true;
@@ -364,10 +364,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(161, 54);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(253, 76);
+            label2.Margin = new Padding(3, 0, 3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(44, 17);
+            label2.Size = new Size(69, 24);
             label2.TabIndex = 4;
             label2.Text = "状态：";
             // 
@@ -394,13 +394,13 @@
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgv_AllOrders.DefaultCellStyle = dataGridViewCellStyle6;
-            dgv_AllOrders.Location = new Point(2, 88);
+            dgv_AllOrders.Location = new Point(3, 124);
             dgv_AllOrders.Margin = new Padding(2);
             dgv_AllOrders.Name = "dgv_AllOrders";
             dgv_AllOrders.ReadOnly = true;
             dgv_AllOrders.RowHeadersWidth = 72;
             dgv_AllOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_AllOrders.Size = new Size(581, 183);
+            dgv_AllOrders.Size = new Size(913, 258);
             dgv_AllOrders.TabIndex = 3;
             // 
             // col_order_id
@@ -470,19 +470,19 @@
             // cbo_FilterOrder
             // 
             cbo_FilterOrder.FormattingEnabled = true;
-            cbo_FilterOrder.Location = new Point(209, 50);
+            cbo_FilterOrder.Location = new Point(328, 71);
             cbo_FilterOrder.Margin = new Padding(2);
             cbo_FilterOrder.Name = "cbo_FilterOrder";
-            cbo_FilterOrder.Size = new Size(126, 25);
+            cbo_FilterOrder.Size = new Size(198, 35);
             cbo_FilterOrder.TabIndex = 2;
             cbo_FilterOrder.SelectedIndexChanged += cbo_FilterOrder_SelectedIndexChanged;
             // 
             // btn_MarkComplete
             // 
-            btn_MarkComplete.Location = new Point(247, 275);
+            btn_MarkComplete.Location = new Point(388, 388);
             btn_MarkComplete.Margin = new Padding(2);
             btn_MarkComplete.Name = "btn_MarkComplete";
-            btn_MarkComplete.Size = new Size(89, 24);
+            btn_MarkComplete.Size = new Size(140, 34);
             btn_MarkComplete.TabIndex = 1;
             btn_MarkComplete.Text = "标记为已完成";
             btn_MarkComplete.UseVisualStyleBackColor = true;
@@ -490,10 +490,10 @@
             // 
             // btn_RefreshOrder
             // 
-            btn_RefreshOrder.Location = new Point(340, 50);
+            btn_RefreshOrder.Location = new Point(534, 71);
             btn_RefreshOrder.Margin = new Padding(2);
             btn_RefreshOrder.Name = "btn_RefreshOrder";
-            btn_RefreshOrder.Size = new Size(92, 24);
+            btn_RefreshOrder.Size = new Size(145, 34);
             btn_RefreshOrder.TabIndex = 0;
             btn_RefreshOrder.Text = "刷新";
             btn_RefreshOrder.UseVisualStyleBackColor = true;
@@ -507,11 +507,11 @@
             tpStats.Controls.Add(btn_SaveAnnouncement);
             tpStats.Controls.Add(grp_Stats);
             tpStats.Controls.Add(btn_RefreshStats);
-            tpStats.Location = new Point(4, 26);
+            tpStats.Location = new Point(6, 37);
             tpStats.Margin = new Padding(2);
             tpStats.Name = "tpStats";
             tpStats.Padding = new Padding(2);
-            tpStats.Size = new Size(583, 451);
+            tpStats.Size = new Size(916, 637);
             tpStats.TabIndex = 3;
             tpStats.Text = "数据统计";
             tpStats.UseVisualStyleBackColor = true;
@@ -519,19 +519,19 @@
             // txt_Announcement
             // 
             txt_Announcement.BackColor = Color.Beige;
-            txt_Announcement.Location = new Point(136, 243);
+            txt_Announcement.Location = new Point(214, 343);
             txt_Announcement.Margin = new Padding(2);
             txt_Announcement.Multiline = true;
             txt_Announcement.Name = "txt_Announcement";
-            txt_Announcement.Size = new Size(321, 87);
+            txt_Announcement.Size = new Size(504, 123);
             txt_Announcement.TabIndex = 3;
             // 
             // btn_SaveAnnouncement
             // 
-            btn_SaveAnnouncement.Location = new Point(255, 334);
+            btn_SaveAnnouncement.Location = new Point(401, 472);
             btn_SaveAnnouncement.Margin = new Padding(2);
             btn_SaveAnnouncement.Name = "btn_SaveAnnouncement";
-            btn_SaveAnnouncement.Size = new Size(71, 24);
+            btn_SaveAnnouncement.Size = new Size(112, 34);
             btn_SaveAnnouncement.TabIndex = 2;
             btn_SaveAnnouncement.Text = "发布公告";
             btn_SaveAnnouncement.UseVisualStyleBackColor = true;
@@ -548,11 +548,11 @@
             grp_Stats.Controls.Add(lbl_GoodsCount);
             grp_Stats.Controls.Add(lbl_AdminCount);
             grp_Stats.Controls.Add(lbl_UserCount);
-            grp_Stats.Location = new Point(138, 54);
+            grp_Stats.Location = new Point(217, 76);
             grp_Stats.Margin = new Padding(2);
             grp_Stats.Name = "grp_Stats";
             grp_Stats.Padding = new Padding(2);
-            grp_Stats.Size = new Size(319, 157);
+            grp_Stats.Size = new Size(501, 222);
             grp_Stats.TabIndex = 1;
             grp_Stats.TabStop = false;
             grp_Stats.Text = "数据统计";
@@ -560,89 +560,89 @@
             // lbl_CompletedCount
             // 
             lbl_CompletedCount.AutoSize = true;
-            lbl_CompletedCount.Location = new Point(205, 125);
-            lbl_CompletedCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_CompletedCount.Location = new Point(322, 176);
+            lbl_CompletedCount.Margin = new Padding(3, 0, 3, 0);
             lbl_CompletedCount.Name = "lbl_CompletedCount";
-            lbl_CompletedCount.Size = new Size(90, 17);
+            lbl_CompletedCount.Size = new Size(141, 24);
             lbl_CompletedCount.TabIndex = 7;
             lbl_CompletedCount.Text = "已完成订单：--";
             // 
             // lbl_ShippingCount
             // 
             lbl_ShippingCount.AutoSize = true;
-            lbl_ShippingCount.Location = new Point(205, 94);
-            lbl_ShippingCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_ShippingCount.Location = new Point(322, 133);
+            lbl_ShippingCount.Margin = new Padding(3, 0, 3, 0);
             lbl_ShippingCount.Name = "lbl_ShippingCount";
-            lbl_ShippingCount.Size = new Size(90, 17);
+            lbl_ShippingCount.Size = new Size(141, 24);
             lbl_ShippingCount.TabIndex = 6;
             lbl_ShippingCount.Text = "待收货订单：--";
             // 
             // lbl_OrderCount
             // 
             lbl_OrderCount.AutoSize = true;
-            lbl_OrderCount.Location = new Point(205, 60);
-            lbl_OrderCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_OrderCount.Location = new Point(322, 85);
+            lbl_OrderCount.Margin = new Padding(3, 0, 3, 0);
             lbl_OrderCount.Name = "lbl_OrderCount";
-            lbl_OrderCount.Size = new Size(78, 17);
+            lbl_OrderCount.Size = new Size(123, 24);
             lbl_OrderCount.TabIndex = 5;
             lbl_OrderCount.Text = "订单总数：--";
             // 
             // lbl_PendingCount
             // 
             lbl_PendingCount.AutoSize = true;
-            lbl_PendingCount.Location = new Point(204, 28);
-            lbl_PendingCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_PendingCount.Location = new Point(321, 40);
+            lbl_PendingCount.Margin = new Padding(3, 0, 3, 0);
             lbl_PendingCount.Name = "lbl_PendingCount";
-            lbl_PendingCount.Size = new Size(90, 17);
+            lbl_PendingCount.Size = new Size(141, 24);
             lbl_PendingCount.TabIndex = 4;
             lbl_PendingCount.Text = "待审核商品：--";
             // 
             // lbl_OnSaleCount
             // 
             lbl_OnSaleCount.AutoSize = true;
-            lbl_OnSaleCount.Location = new Point(15, 125);
-            lbl_OnSaleCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_OnSaleCount.Location = new Point(24, 176);
+            lbl_OnSaleCount.Margin = new Padding(3, 0, 3, 0);
             lbl_OnSaleCount.Name = "lbl_OnSaleCount";
-            lbl_OnSaleCount.Size = new Size(78, 17);
+            lbl_OnSaleCount.Size = new Size(123, 24);
             lbl_OnSaleCount.TabIndex = 3;
             lbl_OnSaleCount.Text = "在售商品：--";
             // 
             // lbl_GoodsCount
             // 
             lbl_GoodsCount.AutoSize = true;
-            lbl_GoodsCount.Location = new Point(15, 94);
-            lbl_GoodsCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_GoodsCount.Location = new Point(24, 133);
+            lbl_GoodsCount.Margin = new Padding(3, 0, 3, 0);
             lbl_GoodsCount.Name = "lbl_GoodsCount";
-            lbl_GoodsCount.Size = new Size(78, 17);
+            lbl_GoodsCount.Size = new Size(123, 24);
             lbl_GoodsCount.TabIndex = 2;
             lbl_GoodsCount.Text = "商品总数：--";
             // 
             // lbl_AdminCount
             // 
             lbl_AdminCount.AutoSize = true;
-            lbl_AdminCount.Location = new Point(15, 60);
-            lbl_AdminCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_AdminCount.Location = new Point(24, 85);
+            lbl_AdminCount.Margin = new Padding(3, 0, 3, 0);
             lbl_AdminCount.Name = "lbl_AdminCount";
-            lbl_AdminCount.Size = new Size(78, 17);
+            lbl_AdminCount.Size = new Size(123, 24);
             lbl_AdminCount.TabIndex = 1;
             lbl_AdminCount.Text = "管理员数：--";
             // 
             // lbl_UserCount
             // 
             lbl_UserCount.AutoSize = true;
-            lbl_UserCount.Location = new Point(15, 30);
-            lbl_UserCount.Margin = new Padding(2, 0, 2, 0);
+            lbl_UserCount.Location = new Point(24, 42);
+            lbl_UserCount.Margin = new Padding(3, 0, 3, 0);
             lbl_UserCount.Name = "lbl_UserCount";
-            lbl_UserCount.Size = new Size(90, 17);
+            lbl_UserCount.Size = new Size(141, 24);
             lbl_UserCount.TabIndex = 0;
             lbl_UserCount.Text = "注册用户数：--";
             // 
             // btn_RefreshStats
             // 
-            btn_RefreshStats.Location = new Point(255, 215);
+            btn_RefreshStats.Location = new Point(401, 304);
             btn_RefreshStats.Margin = new Padding(2);
             btn_RefreshStats.Name = "btn_RefreshStats";
-            btn_RefreshStats.Size = new Size(71, 24);
+            btn_RefreshStats.Size = new Size(112, 34);
             btn_RefreshStats.TabIndex = 0;
             btn_RefreshStats.Text = "刷新统计";
             btn_RefreshStats.UseVisualStyleBackColor = true;
@@ -650,11 +650,11 @@
             // 
             // Frmadmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             DoubleBuffered = true;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(591, 481);
+            ClientSize = new Size(960, 720);
             Controls.Add(tabAdmin);
             Margin = new Padding(2);
             Name = "Frmadmin";

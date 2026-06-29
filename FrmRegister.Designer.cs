@@ -37,7 +37,7 @@
             // 
             lbl_Title.AutoSize = true;
             lbl_Title.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold);
-            lbl_Title.Location = new Point(550, 42);
+            lbl_Title.Location = new Point(534, 100);
             lbl_Title.Margin = new Padding(5, 0, 5, 0);
             lbl_Title.Name = "lbl_Title";
             lbl_Title.Size = new Size(110, 31);
@@ -47,7 +47,7 @@
             // lbl_UserName
             // 
             lbl_UserName.AutoSize = true;
-            lbl_UserName.Location = new Point(399, 127);
+            lbl_UserName.Location = new Point(366, 184);
             lbl_UserName.Margin = new Padding(5, 0, 5, 0);
             lbl_UserName.Name = "lbl_UserName";
             lbl_UserName.Size = new Size(82, 24);
@@ -57,7 +57,7 @@
             // 
             // txt_UserName
             // 
-            txt_UserName.Location = new Point(534, 123);
+            txt_UserName.Location = new Point(501, 180);
             txt_UserName.Margin = new Padding(5, 4, 5, 4);
             txt_UserName.Name = "txt_UserName";
             txt_UserName.Size = new Size(312, 30);
@@ -66,7 +66,7 @@
             // lbl_Pwd
             // 
             lbl_Pwd.AutoSize = true;
-            lbl_Pwd.Location = new Point(399, 184);
+            lbl_Pwd.Location = new Point(366, 241);
             lbl_Pwd.Margin = new Padding(5, 0, 5, 0);
             lbl_Pwd.Name = "lbl_Pwd";
             lbl_Pwd.Size = new Size(64, 24);
@@ -76,7 +76,7 @@
             // 
             // txt_Pwd
             // 
-            txt_Pwd.Location = new Point(534, 179);
+            txt_Pwd.Location = new Point(501, 236);
             txt_Pwd.Margin = new Padding(5, 4, 5, 4);
             txt_Pwd.Name = "txt_Pwd";
             txt_Pwd.PasswordChar = '*';
@@ -86,7 +86,7 @@
             // lbl_ConfirmPwd
             // 
             lbl_ConfirmPwd.AutoSize = true;
-            lbl_ConfirmPwd.Location = new Point(399, 240);
+            lbl_ConfirmPwd.Location = new Point(366, 297);
             lbl_ConfirmPwd.Margin = new Padding(5, 0, 5, 0);
             lbl_ConfirmPwd.Name = "lbl_ConfirmPwd";
             lbl_ConfirmPwd.Size = new Size(100, 24);
@@ -96,7 +96,7 @@
             // 
             // txt_ConfirmPwd
             // 
-            txt_ConfirmPwd.Location = new Point(534, 236);
+            txt_ConfirmPwd.Location = new Point(501, 293);
             txt_ConfirmPwd.Margin = new Padding(5, 4, 5, 4);
             txt_ConfirmPwd.Name = "txt_ConfirmPwd";
             txt_ConfirmPwd.PasswordChar = '*';
@@ -106,7 +106,7 @@
             // lbl_Phone
             // 
             lbl_Phone.AutoSize = true;
-            lbl_Phone.Location = new Point(399, 296);
+            lbl_Phone.Location = new Point(366, 353);
             lbl_Phone.Margin = new Padding(5, 0, 5, 0);
             lbl_Phone.Name = "lbl_Phone";
             lbl_Phone.Size = new Size(82, 24);
@@ -114,10 +114,19 @@
             lbl_Phone.Text = "手机号：";
             lbl_Phone.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // txt_Phone
+            // 
+            txt_Phone.Location = new Point(501, 349);
+            txt_Phone.Margin = new Padding(5, 4, 5, 4);
+            txt_Phone.MaxLength = 11;
+            txt_Phone.Name = "txt_Phone";
+            txt_Phone.Size = new Size(312, 30);
+            txt_Phone.TabIndex = 8;
+            // 
             // lbl_Email
             // 
             lbl_Email.AutoSize = true;
-            lbl_Email.Location = new Point(399, 352);
+            lbl_Email.Location = new Point(366, 409);
             lbl_Email.Margin = new Padding(5, 0, 5, 0);
             lbl_Email.Name = "lbl_Email";
             lbl_Email.Size = new Size(64, 24);
@@ -127,24 +136,15 @@
             // 
             // txt_Email
             // 
-            txt_Email.Location = new Point(534, 348);
+            txt_Email.Location = new Point(501, 405);
             txt_Email.Margin = new Padding(5, 4, 5, 4);
             txt_Email.Name = "txt_Email";
             txt_Email.Size = new Size(312, 30);
             txt_Email.TabIndex = 10;
             // 
-            // txt_Phone
-            // 
-            txt_Phone.Location = new Point(534, 292);
-            txt_Phone.Margin = new Padding(5, 4, 5, 4);
-            txt_Phone.MaxLength = 11;
-            txt_Phone.Name = "txt_Phone";
-            txt_Phone.Size = new Size(312, 30);
-            txt_Phone.TabIndex = 8;
-            // 
             // btn_Submit
             // 
-            btn_Submit.Location = new Point(471, 423);
+            btn_Submit.Location = new Point(438, 480);
             btn_Submit.Margin = new Padding(5, 4, 5, 4);
             btn_Submit.Name = "btn_Submit";
             btn_Submit.Size = new Size(126, 42);
@@ -155,7 +155,7 @@
             // 
             // btn_Cancel
             // 
-            btn_Cancel.Location = new Point(647, 423);
+            btn_Cancel.Location = new Point(614, 480);
             btn_Cancel.Margin = new Padding(5, 4, 5, 4);
             btn_Cancel.Name = "btn_Cancel";
             btn_Cancel.Size = new Size(126, 42);
@@ -178,9 +178,8 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_form.png"));
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1257, 635);
+            ClientSize = new Size(1178, 744);
             Controls.Add(lbl_Tip);
             Controls.Add(btn_Cancel);
             Controls.Add(btn_Submit);

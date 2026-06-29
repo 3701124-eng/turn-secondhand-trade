@@ -145,7 +145,7 @@
             dgv_Goods.RowHeadersWidth = 62;
             dgv_Goods.RowTemplate.Height = 60;
             dgv_Goods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Goods.Size = new Size(929, 679);
+            dgv_Goods.Size = new Size(960, 720);
             dgv_Goods.TabIndex = 4;
             dgv_Goods.CellDoubleClick += dgv_Goods_CellDoubleClick;
             // 
@@ -271,14 +271,14 @@
             pnl_SearchBar.Dock = DockStyle.Top;
             pnl_SearchBar.Location = new Point(0, 0);
             pnl_SearchBar.Name = "pnl_SearchBar";
-            pnl_SearchBar.Size = new Size(929, 105);
+            pnl_SearchBar.Size = new Size(960, 105);
             pnl_SearchBar.TabIndex = 11;
             // 
             // FrmGoodslist
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 679);
+            ClientSize = new Size(960, 720);
             Controls.Add(btn_ViewDetail);
             Controls.Add(btn_Next);
             Controls.Add(lbl_PageInfo);
