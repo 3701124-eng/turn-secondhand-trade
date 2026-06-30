@@ -11,6 +11,7 @@ namespace 转一转校园二手物品交易系统
         public FrmPublishGoods()
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_form.png"));
             this.DoubleBuffered = true;
         }
 
@@ -71,20 +72,20 @@ namespace 转一转校园二手物品交易系统
 
             if (_selectedImagePath != null)
             {
-                string outDir = Path.Combine(Application.StartupPath, "UploadImages");
+                string outDir = Path.Combine(Application.StartupPath, "Upload_image");
                 Directory.CreateDirectory(outDir);
                 string fileName = $"goods_{newId}_{Guid.NewGuid():N}{Path.GetExtension(_selectedImagePath)}";
 
                 string outPath = Path.Combine(outDir, fileName);
                 File.Copy(_selectedImagePath, outPath, overwrite: true);
 
-                string srcDir = Path.GetFullPath(Path.Combine(Application.StartupPath, "..", "..", "..", "UploadImages"));
+                string srcDir = Path.GetFullPath(Path.Combine(Application.StartupPath, "..", "..", "..", "Upload_image"));
                 if (Directory.Exists(srcDir))
                     File.Copy(_selectedImagePath, Path.Combine(srcDir, fileName), overwrite: true);
 
                 SQLHelper.Exec(
                     "INSERT INTO goods_images (goods_id, image_url) VALUES (@g, @u)",
-                    new[] { new SqlParameter("@g", newId), new SqlParameter("@u", Path.Combine("UploadImages", fileName)) });
+                    new[] { new SqlParameter("@g", newId), new SqlParameter("@u", Path.Combine("Upload_image", fileName)) });
             }
 
             ShowTip("商品已提交审核，请等待管理员审核通过");

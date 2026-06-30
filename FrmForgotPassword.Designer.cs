@@ -193,7 +193,7 @@ namespace 转一转校园二手物品交易系统
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(644, 421);
+            ClientSize = new Size(640, 480);
             Controls.Add(lbl_Tip);
             Controls.Add(panel3);
             Controls.Add(panel2);

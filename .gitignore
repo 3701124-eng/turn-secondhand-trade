@@ -27,3 +27,6 @@ _ReSharper*/
 
 ## Secrets
 AppSettings.secret.config
+/test_docx.docx
+*.docx
+/系统设计说明书.md

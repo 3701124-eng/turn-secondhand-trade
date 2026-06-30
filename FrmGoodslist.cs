@@ -16,19 +16,27 @@ namespace 转一转校园二手物品交易系统
         private int _totalCount = 0;
         private int _totalPages = 1;
         private string _keyword = "";
+        private int _categoryId = 0;
         private Dictionary<int, Image> _imageCache = new();
 
         public FrmGoodslist()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            dgv_Goods.Columns["col_image"].DataPropertyName = null;
             dgv_Goods.CellFormatting += dgv_Goods_CellFormatting;
+            dgv_Goods.DataError += (s, args) => { args.ThrowException = false; };
         }
 
         private void FrmGoodslist_Load(object sender, EventArgs e)
         {
-            dgv_Goods.Columns["image_url"].DataPropertyName = null;
-            BeginInvoke(() => LoadData());
+            dgv_Goods.Columns["col_image"].DataPropertyName = null;
+
+            BeginInvoke(() =>
+            {
+                LoadCategories();
+                LoadData();
+            });
         }
 
         private void LoadData()
@@ -40,9 +48,10 @@ namespace 转一转校园二手物品交易系统
     JOIN categories c ON g.category_id = c.category_id
     JOIN users u ON g.seller_id = u.user_id
     WHERE g.status = '在售'
-      AND (@k = '' OR g.title LIKE '%' + @k + '%')";
+      AND (@k = '' OR g.title LIKE N'%' + @k + N'%')
+      AND (@c = 0 OR g.category_id = @c)";
 
-            _totalCount = (int)SQLHelper.Scalar(countSql, new[] { new SqlParameter("@k", keyword ?? "") });
+            _totalCount = (int)SQLHelper.Scalar(countSql, new[] { new SqlParameter("@k", keyword ?? ""), new SqlParameter("@c", _categoryId) });
             _totalPages = (int)Math.Ceiling((double)_totalCount / _pageSize);
             if (_totalPages == 0) _totalPages = 1;
             if (_pageIndex > _totalPages) _pageIndex = _totalPages;
@@ -56,12 +65,14 @@ namespace 转一转校园二手物品交易系统
     JOIN categories c ON g.category_id = c.category_id
     JOIN users u ON g.seller_id = u.user_id
     WHERE g.status = '在售'
-      AND (@k = '' OR g.title LIKE '%' + @k + '%')
+      AND (@k = '' OR g.title LIKE N'%' + @k + N'%')
+      AND (@c = 0 OR g.category_id = @c)
     ORDER BY g.created_time DESC
     OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY";
 
             SqlParameter[] ps = {
                 new SqlParameter("@k", keyword ?? ""),
+                new SqlParameter("@c", _categoryId),
                 new SqlParameter("@offset", (_pageIndex - 1) * _pageSize),
                 new SqlParameter("@pageSize", _pageSize)
             };
@@ -97,7 +108,7 @@ namespace 转一转校园二手物品交易系统
 
         private void dgv_Goods_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgv_Goods.Columns[e.ColumnIndex].Name == "image_url" && e.RowIndex >= 0)
+            if (dgv_Goods.Columns[e.ColumnIndex].Name == "col_image" && e.RowIndex >= 0)
             {
                 if (dgv_Goods.Rows[e.RowIndex].DataBoundItem is DataRowView drv)
                 {
@@ -125,6 +136,27 @@ namespace 转一转校园二手物品交易系统
             btn_Next.Enabled = _pageIndex < _totalPages;
         }
 
+        private void LoadCategories()
+        {
+            DataTable dt = SQLHelper.Query("SELECT category_id, category_name FROM categories ORDER BY category_id");
+            DataRow allRow = dt.NewRow();
+            allRow["category_id"] = 0;
+            allRow["category_name"] = "全部分类";
+            dt.Rows.InsertAt(allRow, 0);
+
+            cbo_Category.DisplayMember = "category_name";
+            cbo_Category.ValueMember = "category_id";
+            cbo_Category.DataSource = dt;
+        }
+
+        private void cbo_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbo_Category.SelectedValue == null || cbo_Category.SelectedValue is not IConvertible) return;
+            _categoryId = Convert.ToInt32(cbo_Category.SelectedValue);
+            _pageIndex = 1;
+            LoadData();
+        }
+
         private void btn_Search_Click(object sender, EventArgs e)
         {
             _keyword = txt_Search.Text.Trim();
@@ -136,6 +168,7 @@ namespace 转一转校园二手物品交易系统
         {
             txt_Search.Text = "";
             _keyword = "";
+            cbo_Category.SelectedIndex = 0;
             _pageIndex = 1;
             LoadData();
         }

@@ -11,6 +11,7 @@ namespace 转一转校园二手物品交易系统
         public FrmGoodsDetail(int goodsId)
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Sys_images", "Backgrounds", "background_form.png"));
             _goodsId = goodsId;
         }
 

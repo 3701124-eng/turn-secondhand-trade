@@ -18,7 +18,7 @@ CREATE TABLE [dbo].[goods](
 	[price] [decimal](10, 2) NOT NULL,
 	[description] [nvarchar](max) NULL,
 	[status] [nvarchar](10) NOT NULL,
-	[created_time] [datetime] NOT NULL,
+	[created_time] [datetime] NOT NULL DEFAULT (getdate()),
 	[category_id] [int] NOT NULL,
 	[seller_id] [int] NOT NULL,
 	[audit_admin_id] [int] NULL,
@@ -40,7 +40,7 @@ CREATE TABLE [dbo].[orders](
 	[goods_id] [int] NOT NULL,
 	[buyer_id] [int] NOT NULL,
 	[order_status] [nvarchar](10) NOT NULL,
-	[order_time] [datetime] NOT NULL,
+	[order_time] [datetime] NOT NULL DEFAULT (getdate()),
 	[complete_time] [datetime] NULL,
 	[shipping_address] [nvarchar](200) NOT NULL,
 	[seller_id] [int] NOT NULL,
@@ -50,6 +50,24 @@ PRIMARY KEY CLUSTERED
 	[order_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+/****** 对象:  Table [dbo].[announcements]    脚本日期: 2026/6/26 10:20:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[announcements](
+	[announce_id] [int] IDENTITY(1,1) NOT NULL,
+	[content] [nvarchar](max) NOT NULL,
+	[creator_id] [int] NOT NULL,
+	[created_time] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[announce_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[announcements] ADD DEFAULT (getdate()) FOR [created_time]
 GO
 /****** 对象:  Table [dbo].[users]    脚本日期: 2026/6/26 10:20:34 ******/
 SET ANSI_NULLS ON

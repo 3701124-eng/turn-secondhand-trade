@@ -22,21 +22,25 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lbl_Search = new Label();
             txt_Search = new TextBox();
+            lbl_Category = new Label();
+            cbo_Category = new ComboBox();
             btn_Search = new Button();
             btn_Refresh = new Button();
             dgv_Goods = new DataGridView();
-            btn_Prev = new Button();
-            lbl_PageInfo = new Label();
-            btn_Next = new Button();
-            btn_ViewDetail = new Button();
-            image_url = new DataGridViewImageColumn();
+            col_image = new DataGridViewImageColumn();
             goods_id = new DataGridViewTextBoxColumn();
             商品名 = new DataGridViewTextBoxColumn();
             价格 = new DataGridViewTextBoxColumn();
             分类 = new DataGridViewTextBoxColumn();
             卖家 = new DataGridViewTextBoxColumn();
             状态 = new DataGridViewTextBoxColumn();
+            btn_Prev = new Button();
+            lbl_PageInfo = new Label();
+            btn_Next = new Button();
+            btn_ViewDetail = new Button();
+            pnl_SearchBar = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgv_Goods).BeginInit();
+            pnl_SearchBar.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_Search
@@ -56,6 +60,27 @@
             txt_Search.Name = "txt_Search";
             txt_Search.Size = new Size(312, 30);
             txt_Search.TabIndex = 1;
+            // 
+            // lbl_Category
+            // 
+            lbl_Category.AutoSize = true;
+            lbl_Category.Location = new Point(47, 68);
+            lbl_Category.Margin = new Padding(5, 0, 5, 0);
+            lbl_Category.Name = "lbl_Category";
+            lbl_Category.Size = new Size(64, 24);
+            lbl_Category.TabIndex = 9;
+            lbl_Category.Text = "分类：";
+            // 
+            // cbo_Category
+            // 
+            cbo_Category.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbo_Category.FormattingEnabled = true;
+            cbo_Category.Location = new Point(126, 64);
+            cbo_Category.Margin = new Padding(5, 4, 5, 4);
+            cbo_Category.Name = "cbo_Category";
+            cbo_Category.Size = new Size(250, 32);
+            cbo_Category.TabIndex = 10;
+            cbo_Category.SelectedIndexChanged += cbo_Category_SelectedIndexChanged;
             // 
             // btn_Search
             // 
@@ -94,7 +119,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgv_Goods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_Goods.ColumnHeadersHeight = 30;
-            dgv_Goods.Columns.AddRange(new DataGridViewColumn[] { image_url, goods_id, 商品名, 价格, 分类, 卖家, 状态 });
+            dgv_Goods.Columns.AddRange(new DataGridViewColumn[] { goods_id, col_image, 商品名, 价格, 分类, 卖家, 状态 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9F);
@@ -120,9 +145,72 @@
             dgv_Goods.RowHeadersWidth = 62;
             dgv_Goods.RowTemplate.Height = 60;
             dgv_Goods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Goods.Size = new Size(929, 679);
+            dgv_Goods.Size = new Size(960, 720);
             dgv_Goods.TabIndex = 4;
             dgv_Goods.CellDoubleClick += dgv_Goods_CellDoubleClick;
+            // 
+            // image_url
+            // 
+            col_image.DataPropertyName = "";
+            col_image.FillWeight = 200F;
+            col_image.HeaderText = "图片";
+            col_image.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            col_image.MinimumWidth = 8;
+            col_image.Name = "col_image";
+            col_image.ReadOnly = true;
+            // 
+            // goods_id
+            // 
+            goods_id.DataPropertyName = "goods_id";
+            goods_id.FillWeight = 80F;
+            goods_id.HeaderText = "商品 ID";
+            goods_id.DefaultCellStyle.Format = "0000";
+            goods_id.MinimumWidth = 8;
+            goods_id.Name = "goods_id";
+            goods_id.ReadOnly = true;
+            // 
+            // 商品名
+            // 
+            商品名.DataPropertyName = "商品名";
+            商品名.FillWeight = 250F;
+            商品名.HeaderText = "商品名";
+            商品名.MinimumWidth = 8;
+            商品名.Name = "商品名";
+            商品名.ReadOnly = true;
+            // 
+            // 价格
+            // 
+            价格.DataPropertyName = "价格";
+            价格.FillWeight = 80F;
+            价格.HeaderText = "价格";
+            价格.MinimumWidth = 8;
+            价格.Name = "价格";
+            价格.ReadOnly = true;
+            // 
+            // 分类
+            // 
+            分类.DataPropertyName = "分类";
+            分类.HeaderText = "分类";
+            分类.MinimumWidth = 8;
+            分类.Name = "分类";
+            分类.ReadOnly = true;
+            // 
+            // 卖家
+            // 
+            卖家.DataPropertyName = "卖家";
+            卖家.HeaderText = "卖家";
+            卖家.MinimumWidth = 8;
+            卖家.Name = "卖家";
+            卖家.ReadOnly = true;
+            // 
+            // 状态
+            // 
+            状态.DataPropertyName = "状态";
+            状态.FillWeight = 80F;
+            状态.HeaderText = "状态";
+            状态.MinimumWidth = 8;
+            状态.Name = "状态";
+            状态.ReadOnly = true;
             // 
             // btn_Prev
             // 
@@ -172,89 +260,38 @@
             btn_ViewDetail.UseVisualStyleBackColor = false;
             btn_ViewDetail.Click += btn_ViewDetail_Click;
             // 
-            // image_url
+            // pnl_SearchBar
             // 
-            image_url.DataPropertyName = "image_url";
-            image_url.FillWeight = 200F;
-            image_url.HeaderText = "图片";
-            image_url.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            image_url.MinimumWidth = 8;
-            image_url.Name = "image_url";
-            image_url.ReadOnly = true;
-            // 
-            // goods_id
-            // 
-            goods_id.DataPropertyName = "goods_id";
-            goods_id.FillWeight = 80F;
-            goods_id.HeaderText = "商品 ID";
-            goods_id.MinimumWidth = 8;
-            goods_id.Name = "goods_id";
-            goods_id.ReadOnly = true;
-            // 
-            // 商品名
-            // 
-            商品名.DataPropertyName = "商品名";
-            商品名.FillWeight = 250F;
-            商品名.HeaderText = "商品名";
-            商品名.MinimumWidth = 8;
-            商品名.Name = "商品名";
-            商品名.ReadOnly = true;
-            // 
-            // 价格
-            // 
-            价格.DataPropertyName = "价格";
-            价格.FillWeight = 80F;
-            价格.HeaderText = "价格";
-            价格.MinimumWidth = 8;
-            价格.Name = "价格";
-            价格.ReadOnly = true;
-            // 
-            // 分类
-            // 
-            分类.DataPropertyName = "分类";
-            分类.FillWeight = 100F;
-            分类.HeaderText = "分类";
-            分类.MinimumWidth = 8;
-            分类.Name = "分类";
-            分类.ReadOnly = true;
-            // 
-            // 卖家
-            // 
-            卖家.DataPropertyName = "卖家";
-            卖家.FillWeight = 100F;
-            卖家.HeaderText = "卖家";
-            卖家.MinimumWidth = 8;
-            卖家.Name = "卖家";
-            卖家.ReadOnly = true;
-            // 
-            // 状态
-            // 
-            状态.DataPropertyName = "状态";
-            状态.FillWeight = 80F;
-            状态.HeaderText = "状态";
-            状态.MinimumWidth = 8;
-            状态.Name = "状态";
-            状态.ReadOnly = true;
+            pnl_SearchBar.Controls.Add(btn_Refresh);
+            pnl_SearchBar.Controls.Add(btn_Search);
+            pnl_SearchBar.Controls.Add(txt_Search);
+            pnl_SearchBar.Controls.Add(lbl_Category);
+            pnl_SearchBar.Controls.Add(cbo_Category);
+            pnl_SearchBar.Controls.Add(lbl_Search);
+            pnl_SearchBar.Dock = DockStyle.Top;
+            pnl_SearchBar.Location = new Point(0, 0);
+            pnl_SearchBar.Name = "pnl_SearchBar";
+            pnl_SearchBar.Size = new Size(960, 105);
+            pnl_SearchBar.TabIndex = 11;
             // 
             // FrmGoodslist
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 679);
+            ClientSize = new Size(960, 720);
             Controls.Add(btn_ViewDetail);
             Controls.Add(btn_Next);
             Controls.Add(lbl_PageInfo);
             Controls.Add(btn_Prev);
             Controls.Add(dgv_Goods);
-            Controls.Add(btn_Refresh);
-            Controls.Add(btn_Search);
-            Controls.Add(txt_Search);
-            Controls.Add(lbl_Search);
+            Controls.Add(pnl_SearchBar);
             Margin = new Padding(5, 4, 5, 4);
             Name = "FrmGoodslist";
             Text = "Form1";
             Load += FrmGoodslist_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_Goods).EndInit();
+            pnl_SearchBar.ResumeLayout(false);
+            pnl_SearchBar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,6 +300,9 @@
 
         private Label lbl_Search;
         private TextBox txt_Search;
+        private Label lbl_Category;
+        private ComboBox cbo_Category;
+        private Panel pnl_SearchBar;
         private Button btn_Search;
         private Button btn_Refresh;
         private DataGridView dgv_Goods;
@@ -270,7 +310,7 @@
         private Button btn_Prev;
         private Label lbl_PageInfo;
         private Button btn_Next;
-        private DataGridViewImageColumn image_url;
+        private DataGridViewImageColumn col_image;
         private DataGridViewTextBoxColumn goods_id;
         private DataGridViewTextBoxColumn 商品名;
         private DataGridViewTextBoxColumn 价格;

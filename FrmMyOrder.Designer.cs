@@ -160,8 +160,9 @@
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            BackgroundImage = DesignTimeSafe.LoadImage("Sys_images", "Backgrounds", "background_form.png");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(929, 679);
+            ClientSize = new Size(960, 720);
             Controls.Add(lbl_Tip);
             Controls.Add(dgv_Order);
             Controls.Add(btn_Confirm);
