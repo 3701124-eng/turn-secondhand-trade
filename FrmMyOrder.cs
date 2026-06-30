@@ -127,6 +127,40 @@ namespace 转一转校园二手物品交易系统
             }
         }
 
+        private void btn_ModifyAddress_Click(object sender, EventArgs e)
+        {
+            if (dgv_Order.CurrentRow == null)
+            {
+                MessageBox.Show("请选中一个订单");
+                return;
+            }
+
+            string status = dgv_Order.CurrentRow.Cells["ColStatus"].Value.ToString();
+            if (status == "已完成" || status == "已退款")
+            {
+                MessageBox.Show("该订单已完成，无法修改地址");
+                return;
+            }
+
+            int orderId = Convert.ToInt32(dgv_Order.CurrentRow.Cells["ColId"].Value);
+            string currentAddress = dgv_Order.CurrentRow.Cells["ColAddress"]?.Value?.ToString() ?? "";
+
+            string input = Microsoft.VisualBasic.Interaction.InputBox(
+                "请输入新的收货地址：", "修改地址", currentAddress, -1, -1);
+
+            if (string.IsNullOrWhiteSpace(input))
+                return;
+
+            SQLHelper.Exec("UPDATE orders SET shipping_address=@addr WHERE order_id=@id",
+                new SqlParameter[]
+                {
+                    new SqlParameter("@addr", input.Trim()),
+                    new SqlParameter("@id", orderId)
+                });
+            MessageBox.Show("收货地址已更新");
+            LoadOrders();
+        }
+
         private void FrmMyOrder_Load(object sender, EventArgs e)
         {
             rdo_Buyer.Checked = true;

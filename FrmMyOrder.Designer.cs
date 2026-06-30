@@ -27,6 +27,7 @@ namespace 转一转校园二手物品交易系统
             ColBuyer = new DataGridViewTextBoxColumn();
             btn_Confirm = new Button();
             btn_ModifyPrice = new Button();
+            btn_ModifyAddress = new Button();
             rdo_Seller = new RadioButton();
             rdo_Buyer = new RadioButton();
             lbl_Tip = new Label();
@@ -129,6 +130,18 @@ namespace 转一转校园二手物品交易系统
             btn_ModifyPrice.UseVisualStyleBackColor = false;
             btn_ModifyPrice.Click += btn_ModifyPrice_Click;
             // 
+            // btn_ModifyAddress
+            // 
+            btn_ModifyAddress.BackColor = SystemColors.ActiveCaption;
+            btn_ModifyAddress.Location = new Point(490, 560);
+            btn_ModifyAddress.Margin = new Padding(5, 4, 5, 4);
+            btn_ModifyAddress.Name = "btn_ModifyAddress";
+            btn_ModifyAddress.Size = new Size(118, 32);
+            btn_ModifyAddress.TabIndex = 10;
+            btn_ModifyAddress.Text = "修改地址";
+            btn_ModifyAddress.UseVisualStyleBackColor = false;
+            btn_ModifyAddress.Click += btn_ModifyAddress_Click;
+            // 
             // rdo_Seller
             // 
             rdo_Seller.AutoSize = true;
@@ -178,6 +191,7 @@ namespace 转一转校园二手物品交易系统
             Controls.Add(dgv_Order);
             Controls.Add(btn_Confirm);
             Controls.Add(btn_ModifyPrice);
+            Controls.Add(btn_ModifyAddress);
             Controls.Add(rdo_Seller);
             Controls.Add(rdo_Buyer);
             Margin = new Padding(5, 4, 5, 4);
@@ -194,6 +208,7 @@ namespace 转一转校园二手物品交易系统
         private DataGridView dgv_Order;
         private Button btn_Confirm;
         private Button btn_ModifyPrice;
+        private Button btn_ModifyAddress;
         private RadioButton rdo_Seller;
         private RadioButton rdo_Buyer;
         private Label lbl_Tip;
